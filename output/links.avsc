@@ -1,0 +1,31 @@
+{
+  "type" : "record",
+  "name" : "links",
+  "doc" : "Sqoop import of links",
+  "fields" : [ {
+    "name" : "recordid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "recordid",
+    "sqlType" : "4"
+  }, {
+    "name" : "movieid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "movieid",
+    "sqlType" : "4"
+  }, {
+    "name" : "imdbid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "imdbid",
+    "sqlType" : "4"
+  }, {
+    "name" : "tmdbid",
+    "type" : [ "null", "float" ],
+    "default" : null,
+    "columnName" : "tmdbid",
+    "sqlType" : "7"
+  } ],
+  "tableName" : "links"
+}

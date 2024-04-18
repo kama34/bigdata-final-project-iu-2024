@@ -1,0 +1,37 @@
+{
+  "type" : "record",
+  "name" : "tags",
+  "doc" : "Sqoop import of tags",
+  "fields" : [ {
+    "name" : "recordid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "recordid",
+    "sqlType" : "4"
+  }, {
+    "name" : "userid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "userid",
+    "sqlType" : "4"
+  }, {
+    "name" : "movieid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "movieid",
+    "sqlType" : "4"
+  }, {
+    "name" : "tag",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "tag",
+    "sqlType" : "12"
+  }, {
+    "name" : "timestamp",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "timestamp",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "tags"
+}

@@ -1,0 +1,25 @@
+{
+  "type" : "record",
+  "name" : "ganres",
+  "doc" : "Sqoop import of ganres",
+  "fields" : [ {
+    "name" : "recordid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "recordid",
+    "sqlType" : "4"
+  }, {
+    "name" : "movieid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "movieid",
+    "sqlType" : "4"
+  }, {
+    "name" : "genre",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "genre",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "ganres"
+}

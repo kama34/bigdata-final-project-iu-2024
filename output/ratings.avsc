@@ -1,0 +1,37 @@
+{
+  "type" : "record",
+  "name" : "ratings",
+  "doc" : "Sqoop import of ratings",
+  "fields" : [ {
+    "name" : "recordid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "recordid",
+    "sqlType" : "4"
+  }, {
+    "name" : "userid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "userid",
+    "sqlType" : "4"
+  }, {
+    "name" : "movieid",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "movieid",
+    "sqlType" : "4"
+  }, {
+    "name" : "rating",
+    "type" : [ "null", "float" ],
+    "default" : null,
+    "columnName" : "rating",
+    "sqlType" : "7"
+  }, {
+    "name" : "timestamp",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "timestamp",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "ratings"
+}

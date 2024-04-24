@@ -1,12 +1,16 @@
 USE team8_projectdb;
 
 -- Query q1
-SELECT genre, COUNT(*) as movie_count
-FROM ganres_partitioned
-GROUP BY genre;
+CREATE EXTERNAL TABLE q1_results(
+genre STRING,
+movie_count INT)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION 'project/hive/warehouse/q1';
 
--- Create table q1_results
-CREATE TABLE q1_results AS
+SET hive.resultset.use.unique.column.names = false;
+
+INSERT INTO q1_results
 SELECT genre, COUNT(*) as movie_count
 FROM ganres_partitioned
 GROUP BY genre;

@@ -1,6 +1,7 @@
 USE team8_projectdb;
 
 -- Query q5
+DROP TABLE IF EXISTS q5_results;
 CREATE EXTERNAL TABLE q5_results(
 userId INT,
 unique_movie_count INT)

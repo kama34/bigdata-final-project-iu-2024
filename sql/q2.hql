@@ -1,6 +1,7 @@
 USE team8_projectdb;
 
 -- Query q2
+DROP TABLE IF EXISTS q2_results;
 CREATE EXTERNAL TABLE q2_results(
 movieId INT,
 avg_rating FLOAT)

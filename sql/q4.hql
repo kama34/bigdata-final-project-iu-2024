@@ -1,6 +1,7 @@
 USE team8_projectdb;
 
 -- Query q4
+DROP TABLE IF EXISTS q4_results;
 CREATE EXTERNAL TABLE q4_results(
 tag STRING,
 tag_count INT)

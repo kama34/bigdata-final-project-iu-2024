@@ -1,6 +1,7 @@
 USE team8_projectdb;
 
 -- Query q1
+DROP TABLE IF EXISTS q1_results;
 CREATE EXTERNAL TABLE q1_results(
 genre STRING,
 movie_count INT)

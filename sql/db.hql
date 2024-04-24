@@ -50,3 +50,15 @@ DESCRIBE movies;
 DESCRIBE ganres;
 DESCRIBE ratings;
 DESCRIBE tags;
+
+--Ganres table
+CREATE EXTERNAL TABLE ganres_partitioned (
+    recordId INT,
+    movieId INT,
+    genre STRING
+)
+PARTITIONED BY (genre STRING)
+-- CLUSTERED BY (movieId) INTO 10 BUCKETS
+STORED AS AVRO
+LOCATION 'project/hive/warehouse/team8_projectdb/ganres_partitioned'
+TBLPROPERTIES ('avro.schema.url'='project/warehouse/avsc/ganres.avsc');

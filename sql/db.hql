@@ -43,3 +43,10 @@ SELECT * FROM movies;
 SELECT * FROM ganres;
 SELECT * FROM ratings;
 SELECT * FROM tags;
+
+--Check datatypes of the columns of the new tables
+DESCRIBE links;
+DESCRIBE movies;
+DESCRIBE ganres;
+DESCRIBE ratings;
+DESCRIBE tags;

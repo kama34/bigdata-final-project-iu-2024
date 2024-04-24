@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from datetime import datetime
 
-PROJECT_PATH = '/project/bigdata-final-project-iu-2024_firas'
+PROJECT_PATH = '/project/bigdata-final-project-iu-2024'
 DATA_LOCATION = os.path.join(PROJECT_PATH, 'data')
 MOVIE_PATH = os.path.join(DATA_LOCATION, 'movies.csv')
 NEW_MOVIE_PATH = os.path.join(DATA_LOCATION, 'new_movies.csv')

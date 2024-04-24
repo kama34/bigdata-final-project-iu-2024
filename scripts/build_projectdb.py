@@ -8,7 +8,7 @@ DATA_PATH = os.path.join(PROJECT_PATH, 'data')
 
 
 # Read password from secrets file
-file = os.path.join("/home/team8/project/secrets", ".psql.pass")
+file = os.path.join("/home/team8/project/bigdata-final-project-iu-2024/secrets", ".psql.pass")
 with open(file, "r") as file:
     password = file.read().rstrip()
 

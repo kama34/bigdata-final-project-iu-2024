@@ -1,14 +1,17 @@
 USE team8_projectdb;
 
 -- Query q4
-SELECT tag, COUNT(*) as tag_count
-FROM tags
-GROUP BY tag
-ORDER BY tag_count DESC;
+CREATE EXTERNAL TABLE q4_results(
+tag STRING,
+tag_count INT)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION 'project/hive/warehouse/q4';
 
--- Create table q4_results
-CREATE TABLE q4_results AS
+SET hive.resultset.use.unique.column.names = false;
+
+INSERT INTO q4_results
 SELECT tag, COUNT(*) as tag_count
-FROM tags
+FROM tags_partitioned_and_bucketed
 GROUP BY tag
 ORDER BY tag_count DESC;

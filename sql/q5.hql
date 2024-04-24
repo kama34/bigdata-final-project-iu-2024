@@ -1,12 +1,16 @@
 USE team8_projectdb;
 
 -- Query q5
-SELECT userId, COUNT(DISTINCT movieId) as unique_movie_count
-FROM ratings
-GROUP BY userId;
+CREATE EXTERNAL TABLE q5_results(
+userId INT,
+unique_movie_count INT)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION 'project/hive/warehouse/q5';
 
--- Create table q5_results
-CREATE TABLE q5_results AS
+SET hive.resultset.use.unique.column.names = false;
+
+INSERT INTO q5_results
 SELECT userId, COUNT(DISTINCT movieId) as unique_movie_count
 FROM ratings
 GROUP BY userId;

@@ -12,6 +12,6 @@ SET hive.resultset.use.unique.column.names = false;
 
 INSERT INTO q4_results
 SELECT tag, COUNT(*) as tag_count
-FROM tags_partitioned_and_bucketed
+FROM tags
 GROUP BY tag
 ORDER BY tag_count DESC;

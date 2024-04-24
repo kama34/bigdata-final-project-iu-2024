@@ -52,6 +52,10 @@ DESCRIBE ratings;
 DESCRIBE tags;
 
 --Ganres table
+-- Set the options
+SET hive.exec.dynamic.partition=true;
+SET hive.exec.dynamic.partition.mode=strict;
+
 CREATE EXTERNAL TABLE ganres_partitioned (
     recordId INT,
     movieId INT,
@@ -62,6 +66,10 @@ PARTITIONED BY (genre STRING)
 STORED AS AVRO
 LOCATION 'project/hive/warehouse/team8_projectdb/ganres_partitioned'
 TBLPROPERTIES ('avro.schema.url'='project/warehouse/avsc/ganres.avsc');
+
+INSERT INTO ganres_partitioned
+SELECT recordid, movieid, genre
+FROM ganres;
 
 -- Query data from the ganres_partitioned_and_bucketed table
 SELECT * FROM ganres_partitioned LIMIT 10;

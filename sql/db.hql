@@ -64,4 +64,4 @@ LOCATION 'project/hive/warehouse/team8_projectdb/ganres_partitioned'
 TBLPROPERTIES ('avro.schema.url'='project/warehouse/avsc/ganres.avsc');
 
 -- Query data from the ganres_partitioned_and_bucketed table
-SELECT * FROM ganres_partitioned_and_bucketed LIMIT 10;
+SELECT * FROM ganres_partitioned LIMIT 10;

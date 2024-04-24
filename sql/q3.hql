@@ -14,3 +14,5 @@ INSERT INTO q3_results
 SELECT userId, COUNT(*) as rating_count
 FROM ratings
 GROUP BY userId;
+
+SELECT * FROM q3_results;

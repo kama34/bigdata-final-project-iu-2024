@@ -15,3 +15,5 @@ SELECT tag, COUNT(*) as tag_count
 FROM tags
 GROUP BY tag
 ORDER BY tag_count DESC;
+
+SELECT * FROM q4_results;

@@ -14,3 +14,5 @@ INSERT INTO q1_results
 SELECT genre, COUNT(*) as movie_count
 FROM ganres_partitioned
 GROUP BY genre;
+
+SELECT * FROM q1_results;

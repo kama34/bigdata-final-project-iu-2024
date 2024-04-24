@@ -14,3 +14,5 @@ INSERT INTO q5_results
 SELECT userId, COUNT(DISTINCT movieId) as unique_movie_count
 FROM ratings
 GROUP BY userId;
+
+SELECT * FROM q5_results;

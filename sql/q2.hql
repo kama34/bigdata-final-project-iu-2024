@@ -14,3 +14,5 @@ INSERT INTO q2_results
 SELECT movieId, AVG(rating) as avg_rating
 FROM ratings
 GROUP BY movieId;
+
+SELECT * FROM q2_results;

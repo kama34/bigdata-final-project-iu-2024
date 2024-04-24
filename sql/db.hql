@@ -8,30 +8,35 @@ USE team8_projectdb;
 -- Create tables
 
 -- links table
+DROP TABLE IF EXISTS links;
 CREATE EXTERNAL TABLE links
 STORED AS AVRO
 LOCATION 'project/hive/warehouse/team8_projectdb/links'
 TBLPROPERTIES ('avro.schema.url'='project/warehouse/avsc/links.avsc');
 
 -- movies table
+DROP TABLE IF EXISTS movies;
 CREATE EXTERNAL TABLE movies
 STORED AS AVRO
 LOCATION 'project/hive/warehouse/team8_projectdb/movies'
 TBLPROPERTIES ('avro.schema.url'='project/warehouse/avsc/movies.avsc');
 
 -- ganres table
+DROP TABLE IF EXISTS ganres;
 CREATE EXTERNAL TABLE ganres
 STORED AS AVRO
 LOCATION 'project/hive/warehouse/team8_projectdb/ganres'
 TBLPROPERTIES ('avro.schema.url'='project/warehouse/avsc/ganres.avsc');
 
 -- ratings table
+DROP TABLE IF EXISTS ratings;
 CREATE EXTERNAL TABLE ratings
 STORED AS AVRO
 LOCATION 'project/hive/warehouse/team8_projectdb/ratings'
 TBLPROPERTIES ('avro.schema.url'='project/warehouse/avsc/ratings.avsc');
 
 -- tags table
+DROP TABLE IF EXISTS tags;
 CREATE EXTERNAL TABLE tags
 STORED AS AVRO
 LOCATION 'project/hive/warehouse/team8_projectdb/tags'
@@ -56,6 +61,7 @@ DESCRIBE tags;
 SET hive.exec.dynamic.partition=true;
 SET hive.exec.dynamic.partition.mode=strict;
 
+DROP TABLE IF EXISTS ganres_partitioned;
 CREATE EXTERNAL TABLE ganres_partitioned (
     recordId INT,
     movieId INT,

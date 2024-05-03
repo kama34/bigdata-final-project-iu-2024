@@ -1,5 +1,6 @@
 -- Drop the databases if exist.
-DROP DATABASE IF EXISTS team8_projectdb;
+DROP DATABASE IF EXISTS team8_projectdb CASCADE;
+-- DROP DATABASE IF EXISTS team8_projectdb;
 
 -- Create a database teamx_projectdb and access it.
 CREATE DATABASE team8_projectdb LOCATION "project/hive/warehouse";
@@ -59,25 +60,24 @@ DESCRIBE tags;
 --Ganres table
 -- Set the options
 SET hive.exec.dynamic.partition=true;
-SET hive.exec.dynamic.partition.mode=strict;
+SET hive.exec.dynamic.partition.mode=nonstrict;
 
-DROP TABLE IF EXISTS ganres_partitioned;
-CREATE EXTERNAL TABLE ganres_partitioned (
-    recordId INT,
-    movieId INT,
-    genre STRING
-)
-PARTITIONED BY (genre STRING)
+
+-- ALTER TABLE ganres_partitioned DROP IF EXISTS PARTITION (genre STRING)
 -- CLUSTERED BY (movieId) INTO 10 BUCKETS
-STORED AS AVRO
-LOCATION 'project/hive/warehouse/team8_projectdb/ganres_partitioned'
-TBLPROPERTIES ('avro.schema.url'='project/warehouse/avsc/ganres.avsc');
+CREATE EXTERNAL TABLE IF NOT EXISTS ganres_partitioned(
+    recordId INT,
+    movieId INT)
+PARTITIONED BY (genre STRING)
+STORED AS AVRO LOCATION 'project/hive/warehouse/ganres_partitioned'
+TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY');
 
 INSERT INTO ganres_partitioned
+PARTITION (genre)
 SELECT recordId, movieId, genre
 FROM ganres;
 
--- Query data from the ganres_partitioned_and_bucketed table
+-- Query data from the ganres_partitioned table
 SELECT * FROM ganres_partitioned LIMIT 10;
 
 -- Delete table ganres

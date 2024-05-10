@@ -1,0 +1,3 @@
+model,RMSE,R2
+"RandomForestRegressionModel: uid=RandomForestRegressor_471be5b2e5a1, numTrees=100, numFeatures=16";0.7448508276056605;0.20775265343735883
+"ALSModel: uid=ALS_0eeaf04d8620, rank=100";0.33096465031269273;0.8111568073531996
